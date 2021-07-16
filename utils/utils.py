@@ -226,8 +226,8 @@ def create_test_env(
     # And optionally stack frames
     if stats_path is not None:
         if hyperparams["normalize"]:
-            print("Loading running average")
-            print(f"with params: {hyperparams['normalize_kwargs']}")
+            # print("Loading running average")
+            # print(f"with params: {hyperparams['normalize_kwargs']}")
             path_ = os.path.join(stats_path, "vecnormalize.pkl")
             if os.path.exists(path_):
                 env = VecNormalize.load(path_, env)
