@@ -1,3 +1,5 @@
+# Copied from OpenAI Gym
+
 import torch
 import numpy as np
 

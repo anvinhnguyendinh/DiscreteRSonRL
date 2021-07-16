@@ -8,6 +8,8 @@ from statsmodels.stats.proportion import proportion_confint
 from .agent import Agent
 from .model import OnlyObsSingleActionModel
 
+# The first class is mostly copied from https://github.com/locuslab/smoothing
+# The subsequent classes are inspired from the first class
 
 class Smooth(Agent):
     ABSTAIN = -1
@@ -163,7 +165,7 @@ class SmoothMultiA(Smooth):
                     # if i == 0: # and self.saved_batch is not None:
                         # batch = self.env_like(self.saved_batch, predictions)[0]  / scaler
                         # batch = self.env_like((batch + noise) * scaler, predictions)[0]  / scaler # batch * scaler
-                    if i + 1  < self.steps:
+                    if i + 1  < self.steps: # 1Noise
                         batch = self.env_like(batch * scaler, predictions)[0]  / scaler
                     final_preds = final_preds + preds
 
@@ -223,7 +225,7 @@ class SmoothReward(SmoothMultiA):
                 noise = torch.FloatTensor(seeder.standard_normal(batch.size()) * self.sigma).to(self.device)
 
                 if not self.continuous:
-                    actions = self.base_classifier(batch + noise).argmax(1)
+                    actions = self.base_classifier(batch + noise).argmax(1) # 1Noise
                     rctions = actions * self.incr +  self.action_space[0] #
                 else:
                     actions = self.base_classifier(batch + noise).squeeze()
@@ -306,7 +308,7 @@ class SmoothMultiR(SmoothReward):
                     noise = torch.FloatTensor(seeder.standard_normal( size_tensor) * self.sigma).to(self.device)
 
                     if not self.continuous:
-                        final_acts = final_acts * self.num_classes
+                        final_acts = final_acts * self.num_classes # 1Noise
                         actions = self.base_classifier(batch + noise).argmax(1) if i == 0 else self.base_classifier(batch).argmax(1)
                         final_acts = final_acts + actions
                         actions = actions * self.incr +  self.action_space[0]
