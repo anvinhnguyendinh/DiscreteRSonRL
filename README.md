@@ -1,3 +1,10 @@
+# Certification of Neural NetworkReinforcement Learning Policiesbased on Randomized Smoothing
+
+We partly modify the repo https://github.com/DLR-RM/rl-baselines3-zoo to fulfill our thesis of RS certification of RL policies.
+
+From here on, we keep their README.
+
+
 [![pipeline status](https://gitlab.com/araffin/rl-baselines3-zoo/badges/master/pipeline.svg)](https://gitlab.com/araffin/rl-baselines3-zoo/-/commits/master) [![coverage report](https://gitlab.com/araffin/rl-baselines3-zoo/badges/master/coverage.svg)](https://gitlab.com/araffin/rl-baselines3-zoo/-/commits/master) [![codestyle](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
 
