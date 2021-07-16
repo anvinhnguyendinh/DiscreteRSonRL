@@ -1,6 +1,8 @@
-# Certification of Neural NetworkReinforcement Learning Policiesbased on Randomized Smoothing
+# Certification of Neural Network Reinforcement Learning Policies based on Randomized Smoothing
 
-We partly modify the repo https://github.com/DLR-RM/rl-baselines3-zoo to fulfill our thesis of RS certification of RL policies.
+We partly modify the repo https://github.com/DLR-RM/rl-baselines3-zoo (in particular: https://github.com/DLR-RM/rl-baselines3-zoo/tree/b83409561347fe2035d1b4ce8d700ab3418c7246 ) to fulfill our thesis of RS certification of RL policies.
+
+How to use: please check the arguments from enjoy_att.py and the command examples from the new bash scripts.
 
 From here on, we keep their README.
 
